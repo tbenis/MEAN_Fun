@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular/angular.js" charset="utf-8"></script>
+    <script src="../angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="../angular-messages/angular-messages.js" charset="utf-8"></script>
+    <script src="../angular-cookies/angular-cookies.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var app = angular.module('myApp', ['ngRoute', 'ngMessages', 'ngCookies'])
+    </script>
+    <script src="./app.js" charset="utf-8"></script>
+    <script src="assets/controllers/userController.js" charset="utf-8"></script>
+    <script src="assets/factories/userFactory.js" charset="utf-8"></script>
+    <!--
+    <script src="assets/controllers/topicController.js" charset="utf-8"></script>
+    <script src="assets/factories/topicFactory.js" charset="utf-8"></script>
+    <script src="assets/controllers/postController.js" charset="utf-8"></script>
+    <script src="assets/factories/postFactory.js" charset="utf-8"></script> -->
+
+  </head>
+
+  <body>
+    <h1>For Belt!</h1>
+    <a href="#!/login">Login</a> | <a href="#!/home">Home</a> | <a href="#!/lets_play">Lets Play</a> | <a href="#!/new_question">new question</a>
+  <div ng-view=''></div>
+  </body>
+</html>

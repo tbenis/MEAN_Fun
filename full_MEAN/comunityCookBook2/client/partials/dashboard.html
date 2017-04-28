@@ -1,0 +1,29 @@
+<div ng-controller='userController'>
+  <div ng-controller='recipeController'>
+    <a href="" ng-click="logout()">Logout</a>
+  <h2>Hi {{theUserName}} welcome to the community cookbook</h2>
+  <p>Search: <input type="text" ng-model="search.name"></p>
+  <table border>
+    <thead>
+      <tr>
+        <th>Recipe Name</th>
+        <th>Added By</th>
+        <th># of ingredients</th>
+        <th># of times cooked</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat ="recipe in recipes | filter:search">
+        <td><a href="#!/recipe/{{recipe._id}}">{{recipe.name}}</a><button type="button" ng-show="recipe._user._id == theUserId" ng-click="delete(recipe._id)">Delete</button></td>
+        <td>{{recipe._user.name}}</td>
+        <td>{{recipe.ingredients.length-1}}</td>
+        <td>{{recipe.cookedTimes}}</td>
+        <td><a href="#!/recipe/{{recipe._id}}">Cook</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <button type="button" name="button"><a href="#!/new_recipe">Add a Recipe</a></button>
+</div>
+</div>

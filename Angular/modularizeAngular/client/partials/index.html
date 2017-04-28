@@ -1,0 +1,13 @@
+<div ng-repeat = "user in users track by $index">
+  <!-- <<a href="#/{{team.name}}" ng-bind = 'team.name'></a> -->
+  <p><a href="#/{{user._id}}">Name: {{user.name}}</a>
+    <button ng-click = "show($index)">
+      Edit User
+    </button>
+  </p>
+</div>
+<a ng-href = '#!/new'>
+  <button>
+    Create User
+  </button>
+</a>

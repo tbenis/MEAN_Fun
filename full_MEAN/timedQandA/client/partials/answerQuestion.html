@@ -1,0 +1,13 @@
+<div ng-controller ='userController'>
+  <div ng-controller ='answerController'>
+      <a href="#!/dashboard">Home</a> | <a href="#!/questionInfo/{{thisQuest._id}}" >Go back to Question</a> | <a href="" ng-click='logout()'>Logout</a>
+      <h2>{{thisQuest.question}}</h2>
+      <h5>{{thisQuest.quest_description}}</h5>
+      <form ng-submit ='newAnswer()'>
+        <p>Your Answer: <input type="text" ng-model='answer.answer'></p>
+        <p>Supporting Details(optional): <input type="text" ng-model='answer.ans_description'></p>
+        <button type="button" name="button"><a href="#!/dashboard">Cancel</a></button>
+        <input type="submit" name="" value="Submit">
+      </form>
+  </div>
+</div>

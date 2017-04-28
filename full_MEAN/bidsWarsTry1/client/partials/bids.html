@@ -1,0 +1,27 @@
+<div ng-controller ='userController' class="container-fluid">
+  <div ng-controller ='productController'>
+
+    <a href="" ng-click='logout()'>Logout</a>
+  <h1>Bid Now!</h1>
+  <div ng-repeat='product in products track by $index'>
+    <div class="clearfix">
+    <div class="col-md-4">
+      <div >
+        <p>{{product.name}}</p>
+      </div>
+      <form ng-submit="placeBid(product._id, $index)">
+        <p><input type="number" ng-model='bid1.bid[$index]'> <input type="submit" value="Place Bid!"></p>
+        <p ng-if="bid1.bid[$index] <=  productMax[$index]">Bid amount should be higher than previous bid</p>
+        <p ng-if="bid1.bid[$index] <=  0">Bid amount should be higher than 0</p>
+      </form>
+      <p>Current Bids:</p>
+      <div ng-repeat='bid in products[$index].bids | filter:search:strict'>
+        <p>{{bid._bidder.name}}: <span>${{bid.bid}}</span></p>
+      </div>
+      <input type="text" ng-model='search._bidder.name' placeholder="search">
+    </div>
+  </div>
+    </div>
+    <button type="button" ng-click="endBid()">End Bid!</button>
+    </div>
+  </div>

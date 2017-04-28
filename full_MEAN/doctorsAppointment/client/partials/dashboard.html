@@ -1,0 +1,29 @@
+<div ng-controller="userController">
+  <div ng-controller="appointmentController">
+<h1>Doctors Appointments</h1>
+<a href="" ng-click='logout()'>Logout</a>
+
+  <p>Search: <input type="text" ng-model='search.complain'></p>
+<table border>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Patient Name</th>
+      <th>Complain</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr ng-repeat ='appointment in appointments | filter:search:strict'>
+
+      <td>{{appointment.date | date}}</td>
+      <td>{{appointment.time | date: 'hh:mma'}}</td>
+      <td>{{appointment._creator.name}}</td>
+      <td>{{appointment.complain}} | <button type="button" ng-if="appointment._creator._id == theUserId" ng-click="delete(appointment._id, appointment.date)">cancel</button></td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" name="button"><a href="#!/newAppointment">Add a new Appointment</a></button>
+</div>
+</div>

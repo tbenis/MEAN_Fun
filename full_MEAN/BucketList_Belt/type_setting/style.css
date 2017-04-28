@@ -1,0 +1,26 @@
+#main {
+	background: #ddd;
+	border: 1px solid #999;
+	padding: 20px;
+	margin: auto;
+	width: 90%;
+}
+@media all and (max-width: 480px) {
+    body { background: green; }
+}
+@media all and (min-width: 481px) {
+    body { background: red; }
+}
+@media all and (min-width: 1024px) {
+    body { background: yellow; }
+}
+Copy
+
+
+/*convert these font sizes to ems*/
+.large {
+	font-size: 2em;
+}
+.medium {
+	font-size: 4em;
+}

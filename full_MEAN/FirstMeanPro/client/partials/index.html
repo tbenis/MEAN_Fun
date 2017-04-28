@@ -1,0 +1,24 @@
+<div ng-controller= "indexController" >
+  <form >
+    <input type="text" ng-model="searchText" placeholder="search name">
+  </form>
+  <a href="#!/"><button>Add new Friend</button></a>
+  <table border>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Show</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='friend in friends | filter:searchText'>
+        <td>{{friend.fname}} {{friend.lname}}</td>
+        <td><a href="#!/show/{{friend._id}}">Show</a></td>
+        <td><a href="#!/edit/{{friend._id}}">Edit</a></td>
+        <td><button type="button" ng-click="delete(friend._id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Song | Nicki Minaj</title>
+  </head>
+  <body>
+    <h1 style="text-shadow: 4px 4px 5px hotpink;">Edit:  <span style="text-shadow: 4px 4px 5px hotpink;"><%= song.title%></span></h1>
+
+      <form action="/<%= song.id %>" method="post">
+        <p>Title: <input type="text" name="title" value="<%= song.title %>"></p>
+        <p>Album: <input type="text" name="album" value="<%= song.album %>"></p>
+        <input type="submit" value="Submit">
+
+    </form>
+    <a href="/">See All Songs</a>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Results</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $(document).ready(function (){
+      // this triggers the connection event in our server!
+      var socket = io.connect();
+      $('body').hover(function (){
+      socket.emit("on_page", {reason: "display info"});
+    })
+      socket.on('server_response', function (data){
+      console.log('The server says: ' + data.response);
+      });
+      // we'll write all the socket stuff after the above line!
+    })
+    </script>
+  </head>
+  <body>
+    <h3>Name: <%= info.name %></h3>
+    <h3>Location: <%= info.location %></h3>
+    <h3>Fav Language: <%= info.language%></h3>
+    <h3>Comment: <%= info.comment%></h3>
+  </body>
+</html>

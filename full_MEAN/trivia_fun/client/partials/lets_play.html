@@ -1,0 +1,33 @@
+<div ng-controller='userController'>
+  <div ng-controller='questionController'>
+  <h5>Hi {{theUserName}}!</h5>
+  <p>Choose an answer for each of the questions and submit the test once done.</p>
+  <p>Good Luck!</p>
+  <form ng-submit="answerQuestion()">
+    <div ng-repeat= "question in questions track by $index" >
+    <div ng-if='rand1 === 0'>
+      <p>1. {{questions[$index].question}}</p>
+      <input type="radio" name="answer{{$index}}" value="{{question.cAnswer}}" ng-model="answer.answer[$index]">{{question.cAnswer}} <br />
+      <input type="radio" name="answer{{$index}}" value="{{question.fAnswerOne}}" ng-model="answer.answer[$index]">{{question.fAnswerOne}} <br />
+      <input type="radio" name="answer{{$index}}" value="{{question.fAnswerTwo}}" ng-model="answer.answer[$index]">{{question.fAnswerTwo}} <br />
+    </div>
+
+    <div ng-if='rand1 === 1'>
+      <p>1. {{questions[$index].question}}</p>
+      <input type="radio" name="answer{{$index}}" value="{{question.fAnswerOne}}" ng-model="answer.answer[$index]">{{question.fAnswerOne}} <br />
+      <input type="radio" name="answer{{$index}}" value="{{question.cAnswer}}" ng-model="answer.answer[$index]">{{question.cAnswer}} <br />
+      <input type="radio" name="answer{{$index}}" value="{{question.fAnswerTwo}}" ng-model="answer.answer[$index]">{{question.fAnswerTwo}} <br />
+    </div>
+
+    <div ng-if='rand1 === 2'>
+      <p>1. {{questions[$index].question}}</p>
+      <input type="radio" name="answer{{$index}}" value="{{question.fAnswerOne}}" ng-model="answer.answer[$index]">{{question.fAnswerOne}} <br />
+      <input type="radio" name="answer{{$index}}" value="{{question.fAnswerTwo}}" ng-model="answer.answer[$index]">{{question.fAnswerTwo}} <br />
+      <input type="radio" name="answer{{$index}}" value="{{question.cAnswer}}" ng-model="answer.answer[$index]">{{question.cAnswer}} <br />
+    </div>
+      </div>
+        <button type="button" name="button"><a href="#!/home">Cancel</a></button>
+        <input type="submit" value="Submit">
+  </form>
+</div>
+</div>

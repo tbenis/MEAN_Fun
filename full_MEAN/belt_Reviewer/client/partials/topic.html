@@ -1,0 +1,30 @@
+<div ng-controller='postController'>
+  <div ng-controller='topicController'>
+  <a href="#!/dashboard">Dashboard</a> | <a href="#!/">Logout</a>
+  <p><a href="#!/profile/{{currTopic._user._id}}">{{currTopic._user.name}}</a> posted a topic:</p>
+  <!-- Topic goes here -->
+
+  <p style="font-weight: bold">{{currTopic.topic}}</p>
+  <p>Description:  {{currTopic.description}}   <!-- Description goes here --></p>
+  <p>post your answer here...</p>
+  <form ng-submit='newPost()'>
+    <input type="text" ng-model='post.post'>
+    <input type="Submit" value="Post">
+  </form>
+  <hr>
+  <div ng-repeat = 'post in currTopic.posts'>
+    <p>Post: <a href="#!/profile/{{post._user._id}}"> {{post._user.name}}: </a>{{post.post}}</p>
+    <button type="button" ng-click="up_vote(post._id)">{{post.up_votes}}</button>
+    <button type="button" ng-click="down_vote(post._id)">{{post.down_votes}}</button>
+    <div ng-repeat='comment in post.comments'>
+      <p>Comment: <a href="#!/profile/{{comment._user._id}}">{{comment._user.name}}</a>: {{comment.comment}}</p>
+    </div>
+    <form ng-submit='newComment(post._id)'>
+      <input type="text" ng-model='comment.comment'>
+      <input type="Submit" value="Comment">
+    </form>
+    <hr>
+  </div>
+</div>
+</div>
+<!-- To be COMPLETED !!!! -->

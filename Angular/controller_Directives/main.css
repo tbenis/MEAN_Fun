@@ -1,0 +1,19 @@
+html.ng-scope {
+    margin: 0 auto;
+    width: 970px;
+    padding: 20px;
+    background-color: #c2b62c;
+}
+input#input {
+    height: 60px;
+    width: 346px;
+}
+button {
+    height: 70px;
+    width: 129px;
+    position: relative;
+    left: 213px;
+    border-radius: 20px;
+    background-color: #357e31;
+    font-size: 20px;
+}

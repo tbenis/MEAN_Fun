@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>First Mean Project</title>
+    <script src="../angular/angular.js" charset="utf-8"></script>
+    <script src="../angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="assets/app.js" charset="utf-8"></script>
+
+    <script src="assets/controllers/showController.js" charset="utf-8"></script>
+    <script src="assets/controllers/newController.js" charset="utf-8"></script>
+    <script src="assets/controllers/indexController.js" charset="utf-8"></script>
+   <script src="assets/controllers/updateController.js" charset="utf-8"></script>
+   <script src="assets/factories/newFactory.js" charset="utf-8"></script>
+   <script src="assets/factories/indexFactory.js" charset="utf-8"></script>
+   <script src="assets/factories/updateFactory.js" charset="utf-8"></script>
+   <script src="assets/factories/showFactory.js" charset="utf-8"></script>
+
+  </head>
+  <body>
+
+    <div ng-view>
+
+    </div>
+      <a href="#!/new">new</a>|<a href="#!/index">all</a>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<div ng-controller="userController">
+  <div ng-controller="recipeController">
+   <a href="" ng-click="logout()">Logout</a>
+  <h3>Recipe Name: {{aRecipe.name}}</h3>
+  <h3>Added By: {{aRecipe._user.name}}</h3>
+  <!-- <br> -->
+  <h4>Ingredients: </h4>
+  <p ng-repeat="ingredient in aRecipe.ingredients">{{ingredient.amount}} {{ingredient.ingredient}}</p>
+  <button type="button" name="button" ng-click="cookedTimes(aRecipe._id)">I cooked it!</button>
+</div>
+</div>

@@ -1,0 +1,15 @@
+<div ng-controller ='userController'>
+  <div ng-controller ='answerController'>
+    <div ng-controller ='questionController'>
+      <a href="#!/dashboard">Home</a> | <a href="#!/questionInfo/{{thisQuest._id}}/newAnswer">Answer this Question</a> | <a href='' ng-click='logout()'>Logout</a>
+      <h2>{{thisQuest.question}}</h2>
+      <h4>{{thisQuest.quest_description}}</h4>
+      <div ng-repeat='answers in thisQuest.answers | orderBy : "-like"'>
+        <h4>{{answers._user.name}}: </h4>
+          <p>{{answers.answer}}</p>
+          <p>{{answers.ans_description}}</p>
+          <p>{{answers.like}} <button type="button" ng-click='like(answers._id)'>Like!</button></p>
+    </div>
+    </div>
+  </div>
+</div>

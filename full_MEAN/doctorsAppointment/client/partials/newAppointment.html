@@ -1,0 +1,22 @@
+<div ng-controller="userController">
+<div ng-controller="appointmentController">
+  <a href="" ng-click='logout()'>Logout</a> |
+  <a href="#!/dash">dashboard</a>
+<form ng-submit="newAppointment()" name='appoint'>
+  <p>Date: <input type="date" name="dat" ng-model="appointment.date" required></p>
+  <p>Time: <input type="time" name="tim" ng-model="appointment.time" required></p>
+  <p>Complain: <input type="text" name="comp" ng-model="appointment.complain" required></p>
+  <button type="button" name="button"><a href="#!/dash">Cancel</a></button>
+  <input type="submit" name="" value="Add Appointment">
+  <div ng-messages="appoint.dat.$error" style="color:maroon" role="alert">
+    <div ng-message="required">Please Enter A Date</div>
+  </div>
+  <div ng-messages="appoint.tim.$error" style="color:maroon" role="alert">
+    <div ng-message="required">Please Enter an Appointment Time</div>
+  </div>
+  <div ng-messages="appoint.comp.$error" style="color:maroon" role="alert">
+    <div ng-message="required">Please Enter A Complain</div>
+  </div>
+</form>
+</div>
+</div>

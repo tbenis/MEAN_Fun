@@ -1,0 +1,27 @@
+<div ng-controller='userController'>
+  <div ng-controller='productController'>
+
+  <a href="" ng-click='logout()'>Logout</a>
+  <h4> {{theUserName}} ended the bid.</h4>
+  <h5>Highest Bidder per Product!</h5>
+  <div >
+  <p>{{products[1].name}}</p>
+    <p>Product1 Winner: {{product2Winner}}</p>
+    <p>Price: ${{productMax[1]}}</p>
+  </div>
+  <br>
+
+  <div >
+  <p>{{products[0].name}}</p>
+    <p>Product2 Winner: {{product1Winner}}</p>
+    <p>Price: ${{productMax[0]}}</p>
+  </div>
+  <br>
+  <div >
+  <p>{{products[2].name}}</p>
+    <p>Product3 Winner: {{product3Winner}}</p>
+    <p>Price: ${{productMax[2]}}</p>
+  </div>
+  <button type="button" ng-click='delete()'>Start Bid</button>
+</div>
+</div>

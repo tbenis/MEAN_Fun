@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Controlling users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="./app.js" charset="utf-8"></script>
+    <script>
+// Inside the controller
+
+</script>
+
+  </head>
+  <body ng-app='myApp'>
+    <div ng-controller="UsersController">
+      <form  ng-submit="addUser()" >
+    <label>First Name: <input type="text" name="fname" ng-model='user.fname'></label>
+    <label>Last Name: <input type="text" name="lname" ng-model='user.lname'></label>
+    <label>Favorite Language: <input type="text" name="flang" ng-model='user.flang'></label>
+    <label>Date: <input type="date" name="date" ng-model='user.date'></label>
+    <input type="Submit" value="Create User">
+
+  Search Users: <input type="text" ng-model="search.$">
+    <table border>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Fav Language</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+        <tbody>
+          <tr ng-repeat="user in users track by $index ">
+            <td>{{user.fname}}</td>
+            <td>{{user.lname}}</td>
+            <td>{{user.flang}}</td>
+            <td>{{user.date}}</td>
+
+            <td><button type="button" ng-click='delete(user)' >Delete</button></td>
+          </tr>
+        </tbody>
+
+    </table>
+
+    <div >
+
+    </div>
+      </form>
+
+    </div>

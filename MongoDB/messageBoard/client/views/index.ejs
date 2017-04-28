@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Message Board</title>
+  </head>
+  <body>
+    <h1>The Dojo Message Board</h1>
+    <form action="/mprocessing" method="post">
+      <p>Name: <input type="text" name="name" value=""></p>
+      <p>Message: <input type="text" name="message" value=""></p>
+      <input type="submit" value="Post Message">
+    </form>
+    <%for(var i = 0; i < results.length; i++){%>
+    <h1>Name: <%= results[i].name%></h1>
+    <h5>Message: <%= results[i].message%></h5>
+
+      <%for(var j = 0; j < results[i].comments.length; j++){%>
+    <p>Name: <%= results[i].comments[j].commenter%></p>
+    <p>Comment: <%= results[i].comments[j].comment%></p>
+
+  <%}%>
+    <form action="/cprocessing/<%= results[i]._id %>" method="post">
+      <p>Name: <input type="text" name="cname" ></p>
+      <p>Comment: <input type="text" name="comment" ></p>
+      <input type="submit" value="Post Comment">
+    </form>
+      <hr>
+
+      <%}%>
+
+  </body>
+</html>

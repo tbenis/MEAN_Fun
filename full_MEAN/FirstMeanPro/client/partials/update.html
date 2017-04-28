@@ -1,0 +1,9 @@
+<div ng-controller= "updateController">
+  <form ng-submit='update()'>
+    {{friends.fname}} {{friends.bday}} <h1 >{{friends.bday | date:'yyyy-MM-dd'}} </h1>
+    <p>First Name: <input type="text" ng-model="friend.fname"  placeholder ='{{friends.fname}}'></p>
+    <p>Last Name: <input type="text" ng-model="friend.lname" placeholder ='{{friends.lname}}'></p>
+    <p>Birthday: <input type="Date" ng-model="friend.bday" value ="{{friends.bday | date:'yyyy-MM-dd'}}"></p>
+    <input type="submit" value="Update">
+  </form>
+</div>

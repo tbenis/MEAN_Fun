@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='app'>
+
+<head>
+    <meta charset="utf-8">
+    <title>Products and Orders</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="./app.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div ng-controller='productController'>
+        <h4>Products Controller</h4>
+        <form ng-submit='create()'>
+            <label>Product Name: <input type="text" ng-model='product.name'></label>
+            <label>Product Name: <input type="number" step='0.01' ng-model='product.price'></label>
+            <input type="submit" value="Add Product">
+        </form>
+        <br><br>
+        <table border>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat='product in products'>
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price | currency:"USD $"}}</td>
+                    <td><button ng-click='delete($index)'>Delete Product</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <h4>Orders Controller</h4>
+    <div ng-controller='orderController'>
+        <table border>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quatity Available</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="product in products | orderBy: 'price' track by $index ">
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price | currency:"USD $"}}</td>
+                    <td> {{product.quantity}} </td>
+                    <td>
+                        <button ng-click="buyProduct($index)">Buy Product</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Products</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="./app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller='productsController'>
+<form ng-submit=''>
+<label>Product Name: <input type="text" name="pname" ng-model='pname'></label>
+<label>Product Price: <input type="text" name="price" ng-model='price'></label>
+<input type="submit"value="Add Product">
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat=''>
+      <td></td>
+      <td>$</td>
+      <td><button type="button" name="button">Delete Product</button></td>
+    </tr>
+  </tbody>
+</table>
+  </body>
+</html>

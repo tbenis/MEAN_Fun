@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QuotingDojo | quotes</title>
+  </head>
+  <body>
+  <h1>Here are the awesome quotes!</h1>
+  <%for(var quote = 0; quote< quotes.length; quote++){%>
+      <p>"<%= quotes[quote].quote%>"</p>
+
+      <p>- <%= quotes[quote].name%>  at <%= quotes[quote].createdAt%></p>
+      <hr>
+    <%}%>
+    <a href="/">Add Qoute</a>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<div ng-controller="userController">
+  <div ng-controller="listController">
+  <a href="#!/">Bucket List</a> | <a href="#!/dashboard">Home</a> | <a href="" ng-click='logout()'>Logout</a>
+  <h1>Welcome {{theUserName}}!</h1>
+  <form name='myList' ng-submit='addList()'>
+    <input type="text" name="title" ng-minlength="5" placeholder="Title" ng-model='list.title' required>
+    <input type="text" name="description" ng-minlength=10 placeholder="Description" ng-model='list.description' required>
+    <select ng-model='list._taggedUser'>
+      <option  disabled selected>tag a user</option >
+        <option  ng-repeat='user in users' value="{{user._id}}">{{user.name}}</option >
+    </select >
+    <input type="submit" name="" value="Add To list">
+    <div ng-messages='myList.title.$error'>
+      <div ng-message="minlength">
+        Title Must be more than 5 characters long
+      </div>
+      <div ng-message="required">
+        Must enter Title
+      </div>
+      <div ng-messages='myList.description.$error'>
+        <div ng-message="minlength">
+          Description Must be more than 10 characters long
+        </div>
+        <div ng-message="required">
+          Must enter Description
+        </div>
+    </div>
+  </form>
+  <div>
+    <h4>Before I die, I want to...</h4>
+    <div ng-repeat='list in thisUser.lists track by $index' >
+    <input type="checkbox"  ng-click="checked($index)" value='checkboxModel.value'  ng-model='list.done'> {{list._listCreator.name}} | {{list.title}} - {{list.description}}...-  {{list.createdAt}} --- {{checkboxModel.value}}</p>
+  </div>
+
+   <h4>List of other users</h4>
+   <div ng-repeat='user in users'>
+    <p><a href="#!/user/{{user._id}}">{{user.name}}</a></p>
+   </div>
+</div>
+</div>
+</div>

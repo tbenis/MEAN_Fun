@@ -1,0 +1,20 @@
+<div ng-controller='userController'>
+  <div ng-controller='listController'>
+  <a href="#!/">Bucket List</a> | <a href="#!/dashboard">Home</a> | <a href="" ng-click='logout()'>Logout</a>
+  <h1>{{aUsersList.name}}'s Bucket List:</h1>
+
+      <h4 >Done</h4>
+      <div ng-repeat="list in aUsersList.lists track by $index"  ng-show="list.done">
+      <!-- <span ng-if="list.done == true"> -->
+        <input type="checkbox" ng-click="edit($index)" ng-model=list.done>{{aUsersList.name}} | {{list.title}} - {{list.description}}...-  {{list.createdAt}} </input>
+      <!-- </span> -->
+  </div>
+
+      <h4>Pending</h4>
+      <div   ng-repeat="list in aUsersList.lists" ng-show="!list.done" >
+        <!-- <span ng-if="list.done == false"> -->
+          <input ng-model="list.done" ng-click="edit($index)" type="checkbox" >{{list._listCreator.name}} | {{list.title}} - {{list.description}}...-  {{list.createdAt}} </input>
+        <!-- </span> -->
+  </div>
+</div>
+</div>

@@ -1,0 +1,49 @@
+<div ng-controller='topicController'>
+  <div ng-controller='userController'>
+  <h1 ng-bind="'Welcome ' + theUser +'!'" >Welcome, !</h1>
+<button ng-click='logout()'>Logout</button>
+  <!-- Search Box -->
+  <form ng-submit>
+    <input type="text" >
+    <input type="submit" value="Search">
+  </form>
+  <!-- {{topics}} -->
+   <!-- Table with dash board information -->
+  <table border>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Topic</th>
+        <th>UserName</th>
+        <th>Posts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- {{topics}} -->
+      <tr ng-repeat='topic in topics'>
+        <td>{{topic.category}}</td>
+        <td><a href="#!/topic/{{topic._id}}">{{topic.topic}}</a></td>
+        <td><a href="#!/profile/{{topic._user._id}}">{{topic._user.name}}</a></td>
+        <td>{{topic.posts.length}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Add a new Topic -->
+  <h4>Add a new Topic</h4>
+  {{theUser}}
+    <form ng-submit='newTopic()'>
+    <p>Topic: <input type="text" ng-model='topic.topic'></p>
+    <p>Description: <input type="text" ng-model='topic.description'></p>
+    <p>Category: <select ng-model='topic.category'>
+      <option ng-model='topic.category'>Ruby On Rails</option>
+      <option ng-model='topic.category'>MySql</option>
+      <option ng-model='topic.category'>UX</option>
+      <option ng-model='topic.category'>Web Development</option>
+      <option ng-model='topic.category'>JavaScript</option>
+    </select></p>
+    <input type="submit" name="" value="Submit">
+    </form>
+
+</div>
+</div>

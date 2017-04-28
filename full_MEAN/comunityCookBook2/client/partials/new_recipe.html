@@ -1,0 +1,22 @@
+<div ng-controller='userController'>
+  <div ng-controller='recipeController'>
+     <a href="" ng-click="logout()">Logout</a>
+    <form ng-submit="newRecipe()" name="myForm">
+    <p>Recipe Name: <input type="text" ng-model='recipe.name' name="rName" ng-minlength="2"  ng-maxlength="15" placeholder="Recipe name" required=""></p>
+    <h4>Current Ingredients:</h4>
+    <p ng-repeat="ingredient in ingredients track by $index">
+      <span>{{ingredient.amount}}</span> | <span>{{ingredient.ingredient}}</span>
+    </p>
+    <p>Ingredients: <input type="text" ng-model='ingredient.amount' placeholder="ingredient Amount"> <input type="text" ng-model='ingredient.ingredient' name="iName" ng-minlength="2" placeholder="ingredient name" ><button type="button" ng-click="collectIngredients()">Add Ingredient</button></p>
+    <input type="submit" name="" value="Submit Recipe">
+    <div ng-messages="myForm.rName.$error" style="color:maroon" role="alert">
+      <div ng-message="required">Please enter a Recipe name</div>
+      <div ng-message="minlength">Recipe Name must be more than two characters</div>
+      <div ng-message="maxlength">Recipe name cannot be more than 15 characters</div>
+  </div>
+  <div ng-messages="myForm.iName.$error" style="color:maroon" role="alert">
+    <div ng-message="minlength">Ingredient Name must be more than two characters</div>
+</div>
+    </form>
+  </div>
+</div>
